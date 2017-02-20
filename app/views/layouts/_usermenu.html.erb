@@ -1,0 +1,8 @@
+<% if usuario_signed_in? == true %>
+    <%= link_to ' Inicio ', sucursales_path %>
+    -
+    <%= link_to ' Log out ', destroy_usuario_session_path, :method => 'delete' %>
+    <!--%= link_to ' Registrar sucursal ', new_sucursale_path %-->
+<% else %>
+  <%= link_to 'Iniciar sesion', new_usuario_session_path %>
+<% end %>
