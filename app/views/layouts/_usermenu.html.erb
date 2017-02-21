@@ -1,8 +1,26 @@
 <% if usuario_signed_in? == true %>
-    <%= link_to ' Inicio ', sucursales_path %>
-    -
-    <%= link_to ' Log out ', destroy_usuario_session_path, :method => 'delete' %>
+    <nav>
+      <ul>
+        <li>
+          <a title="Opcion 1" >
+          <%= link_to ' Inicio ', sucursales_path %>
+        </a>
+
+        </li>
+        <li><a title="Opcion 2" >
+          <%= link_to ' Registrar empleados ', destroy_usuario_session_path, :method => 'delete' %>
+        </a>
+
+        </li>
+        <li><a title="Opcion 3" >
+          <%= link_to ' Log out ', destroy_usuario_session_path, :method => 'delete' %>
+        </a>
+
+        </li>
+      </ul>
     <!--%= link_to ' Registrar sucursal ', new_sucursale_path %-->
+    </nav>
+
 <% else %>
   <%= link_to 'Iniciar sesion', new_usuario_session_path %>
 <% end %>
