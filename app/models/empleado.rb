@@ -1,3 +1,3 @@
 class Empleado < ApplicationRecord
-  belongs_to :sucursale
+  belongs_to :sucursale , optional:true
 end

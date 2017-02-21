@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :sucursales_id %>
-    <%= f.text_field :sucursales_id %>
+    <%= f.collection_select(:sucursales_id, Sucursale.all, :id, :nombre) %>
   </div>
 
   <div class="actions">

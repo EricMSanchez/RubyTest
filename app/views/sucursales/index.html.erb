@@ -8,11 +8,11 @@
       <th>Nombre</th>
       <th>Calle</th>
       <th>Colonia</th>
-      <th>Numeroexterior</th>
-      <th>Numerointerior</th>
+      <th>Numero exterior</th>
+      <th>Numero interior</th>
       <th>Ciudad</th>
-      <th>Pais</th>
-      <th>Usuarios</th>
+      <th>País</th>
+      <th>Empresa</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
         <td><%= sucursale.numeroInterior %></td>
         <td><%= sucursale.ciudad %></td>
         <td><%= sucursale.pais %></td>
-        <td><%= sucursale.usuarios_id %></td>
+        <td><%= Usuario.find(sucursale.usuarios_id).nombreEmpresa.to_str %></td>
         <td><%= link_to ' Ver ', sucursale %></td>
         <td><%= link_to ' Modificar ', edit_sucursale_path(sucursale) %></td>
         <!--td><!--%= #link_to 'Destroy', sucursale, method: :delete, data: { confirm: 'Are you sure?' } %></td-->

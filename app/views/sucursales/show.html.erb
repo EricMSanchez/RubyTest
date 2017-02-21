@@ -36,9 +36,9 @@
 </p>
 
 <p>
-  <strong>Usuarios:</strong>
-      <%= @sucursale.usuarios_id %>
+  <strong>Empresa:</strong>
+      <%= Usuario.find(@sucursale.usuarios_id).nombreEmpresa.to_str %>
 </p>
 
-<%= link_to 'Edit', edit_sucursale_path(@sucursale) %> |
-<%= link_to 'Back', sucursales_path %>
+<%= link_to 'Modificar', edit_sucursale_path(@sucursale) %> |
+<%= link_to 'Regresar', sucursales_path %>

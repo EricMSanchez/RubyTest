@@ -4,7 +4,7 @@ class SucursalesController < ApplicationController
   # GET /sucursales
   # GET /sucursales.json
   def index
-    @sucursales = Sucursale.all
+    @sucursales = Sucursale.where :usuarios_id => current_usuario.id
   end
 
   # GET /sucursales/1
@@ -29,10 +29,10 @@ class SucursalesController < ApplicationController
   # POST /sucursales.json
   def create
     @sucursale = Sucursale.new(sucursale_params)
-
+    @sucursale.usuarios_id = current_usuario.id
     respond_to do |format|
       if @sucursale.save
-        format.html { redirect_to @sucursale, notice: 'Sucursale was successfully created.' }
+        format.html { redirect_to @sucursale, notice: 'Sucursal creada con exito!' }
         format.json { render :show, status: :created, location: @sucursale }
       else
         format.html { render :new }
@@ -45,8 +45,9 @@ class SucursalesController < ApplicationController
   # PATCH/PUT /sucursales/1.json
   def update
     respond_to do |format|
+      @sucursale.usuarios_id = current_usuario.id
       if @sucursale.update(sucursale_params)
-        format.html { redirect_to @sucursale, notice: 'Sucursale was successfully updated.' }
+        format.html { redirect_to @sucursale, notice: 'Sucursal actualizada con exito!' }
         format.json { render :show, status: :ok, location: @sucursale }
       else
         format.html { render :edit }
