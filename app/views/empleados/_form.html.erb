@@ -1,7 +1,7 @@
 <%= form_for(empleado) do |f| %>
   <% if empleado.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(empleado.errors.count, "error") %> prohibited this empleado from being saved:</h2>
+      <h2><%= pluralize(empleado.errors.count, "error") %> no se puede guardar el empleado:</h2>
 
       <ul>
       <% empleado.errors.full_messages.each do |message| %>
@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
+    <%= f.label :nombre%>
+    <%= f.text_field :nombre  %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :sucursales_id %>
-    <%= f.collection_select(:sucursales_id, Sucursale.all, :id, :nombre) %>
+    <%= f.collection_select(:sucursales_id, Sucursale.all, :id, :nombre )%>
   </div>
 
   <div class="actions">

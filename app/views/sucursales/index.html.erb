@@ -28,8 +28,8 @@
         <td><%= sucursale.ciudad %></td>
         <td><%= sucursale.pais %></td>
         <td><%= Usuario.find(sucursale.usuarios_id).nombreEmpresa.to_str %></td>
-        <td><%= link_to ' Ver ', sucursale %></td>
-        <td><%= link_to ' Modificar ', edit_sucursale_path(sucursale) %></td>
+        <td><%=  link_to ' Ver ', sucursale, class: "button-link" %></td>
+        <td><%= link_to ' Modificar ', edit_sucursale_path(sucursale), class: "button-link"  %></td>
         <!--td><!--%= #link_to 'Destroy', sucursale, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
       </tr>
     <% end %>
@@ -38,7 +38,7 @@
 
 <br>
 
-<%= link_to 'Nueva sucursal', new_sucursale_path %>
+<%= link_to 'Registrar sucursal', new_sucursale_path, class: "button-link"  %>
 
     <% else %>
     <p>Pagina de inicio - Favor de iniciar sesion...</p>

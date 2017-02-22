@@ -19,10 +19,10 @@
         <td><%= empleado.nombre %></td>
         <td><%= empleado.rfc %></td>
         <td><%= empleado.puesto %></td>
-        <td><%= empleado.sucursales %></td>
-        <td><%= link_to 'Show', empleado %></td>
-        <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
-        <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= empleado.sucursale.nombre.to_str %></td>
+        <td><%= link_to 'Mostrar', empleado %></td>
+        <td><%= link_to 'Modificar', edit_empleado_path(empleado) %></td>
+        <td><%= link_to 'Borrar', empleado, method: :delete, data: { confirm: 'Esta seguro de borrar el empleado?' } %></td>
       </tr>
     <% end %>
   </tbody>

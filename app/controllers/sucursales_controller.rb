@@ -4,16 +4,15 @@ class SucursalesController < ApplicationController
   # GET /sucursales
   # GET /sucursales.json
   def index
+    if current_usuario != nil
     @sucursales = Sucursale.where :usuarios_id => current_usuario.id
+    end
   end
 
   # GET /sucursales/1
   # GET /sucursales/1.json
   def show
-
-      #if @sucursale.usuario == nil
-       # @sucursale.usuario = Usuario.new()
-      #end
+    @empleados = Empleado.where :sucursales_id =>  @sucursale.id
   end
 
   # GET /sucursales/new

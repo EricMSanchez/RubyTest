@@ -139,3 +139,23 @@ nav > ul > li > div ul > li > a {
 nav > ul > li > div ul > li:hover > a {
     background-color: rgba( 255, 255, 255, 0.1);
 }
+
+.button-link:hover,.button-link:visited,.button-link:active,.button-link:link {
+    padding: 8px 13px;
+    background: #ffffff;
+    color: #4d4d4d;
+    font-color: rgb(197, 202, 255);
+    text-decoration:none;
+    border-radius:0.5em;
+    font-weight: bold;
+}
+
+.button-link:hover {
+    color: #ffffff;
+    font-weight: bold;
+    background: #000000;
+}
+
+.msg-error{
+color:#cc0000;
+}
