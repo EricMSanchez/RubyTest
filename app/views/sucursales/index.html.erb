@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<% if usuario_signed_in? == true %>
+<h1>Sucursales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Calle</th>
+      <th>Colonia</th>
+      <th>Numero exterior</th>
+      <th>Numero interior</th>
+      <th>Ciudad</th>
+      <th>País</th>
+      <th>Empresa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sucursales.each do |sucursale| %>
+      <tr>
+        <td><%= sucursale.nombre %></td>
+        <td><%= sucursale.calle %></td>
+        <td><%= sucursale.colonia %></td>
+        <td><%= sucursale.numeroExterior %></td>
+        <td><%= sucursale.numeroInterior %></td>
+        <td><%= sucursale.ciudad %></td>
+        <td><%= sucursale.pais %></td>
+        <td><%= Usuario.find(sucursale.usuarios_id).nombreEmpresa.to_str %></td>
+        <td><%=  link_to ' Ver ', sucursale, class: "button-link" %></td>
+        <td><%= link_to ' Modificar ', edit_sucursale_path(sucursale), class: "button-link"  %></td>
+        <!--td><!--%= #link_to 'Destroy', sucursale, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Registrar sucursal', new_sucursale_path, class: "button-link"  %>
+
+    <% else %>
+    <p>Pagina de inicio - Favor de iniciar sesion...</p>
+    <% end %>

@@ -1,0 +1,53 @@
+<%= form_for(sucursale) do |f| %>
+  <% if sucursale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sucursale.errors.count, "error") %> esta evitnado que se guarde:</h2>
+
+      <ul>
+      <% sucursale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :calle %>
+    <%= f.text_field :calle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :colonia %>
+    <%= f.text_field :colonia %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numeroExterior %>
+    <%= f.text_field :numeroExterior %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numeroInterior %>
+    <%= f.text_field :numeroInterior %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ciudad %>
+    <%= f.text_field :ciudad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pais %>
+    <%= f.text_field :pais %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Guardar" %>
+  </div>
+<% end %>

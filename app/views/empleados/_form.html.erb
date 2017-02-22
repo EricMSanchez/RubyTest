@@ -1,0 +1,37 @@
+<%= form_for(empleado) do |f| %>
+  <% if empleado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(empleado.errors.count, "error") %> no se puede guardar el empleado:</h2>
+
+      <ul>
+      <% empleado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre%>
+    <%= f.text_field :nombre  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rfc %>
+    <%= f.text_field :rfc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :puesto %>
+    <%= f.text_field :puesto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sucursales_id %>
+    <%= f.collection_select(:sucursales_id, Sucursale.all, :id, :nombre )%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>

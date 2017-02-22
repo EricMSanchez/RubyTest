@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @sucursale.nombre %>
+</p>
+
+<p>
+  <strong>Calle:</strong>
+  <%= @sucursale.calle %>
+</p>
+
+<p>
+  <strong>Colonia:</strong>
+  <%= @sucursale.colonia %>
+</p>
+
+<p>
+  <strong>Numeroexterior:</strong>
+  <%= @sucursale.numeroExterior %>
+</p>
+
+<p>
+  <strong>Numerointerior:</strong>
+  <%= @sucursale.numeroInterior %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= @sucursale.ciudad %>
+</p>
+
+<p>
+  <strong>Pais:</strong>
+  <%= @sucursale.pais %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+      <%= Usuario.find(@sucursale.usuarios_id).nombreEmpresa.to_str %>
+</p>
+<br>
+<% if @empleados.count > 0 %>
+<h2>Empleados</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Rfc</th>
+    <th>Puesto</th>
+    <th>Sucursales</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @empleados.each do |empleado| %>
+      <tr>
+        <td><%= empleado.nombre %></td>
+        <td><%= empleado.rfc %></td>
+        <td><%= empleado.puesto %></td>
+        <td><%= Sucursale.find(empleado.sucursales_id).nombre %></td>
+        <td><%= link_to 'Mostrar', empleado %></td>
+        <td><%= link_to 'Modificar', edit_empleado_path(empleado) %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+    <% end%>
+<br>
+<%= link_to 'Modificar sucursal', edit_sucursale_path(@sucursale) %> |
+<%= link_to 'Regresar a sucurales', sucursales_path %>
+<br>
+
+
+
